@@ -8,9 +8,10 @@
  */
 import React, { Component, useRef } from 'react'
 import PropTypes from 'prop-types'
-import { tooltipContext, useTooltipHandlers, TooltipWrapper } from '@nivo/tooltip'
-import { ThemeProvider } from '../theming'
-import { MotionConfigProvider } from '../motion'
+import { useTooltipHandlers, TooltipWrapper } from '../../../tooltip/src'
+import { tooltipContext } from '@nivo/tooltip'
+import { ThemeProvider } from '@nivo/core'
+import { MotionConfigProvider } from '@nivo/core'
 
 const containerStyle = {
     position: 'relative',
@@ -50,7 +51,11 @@ const Container = ({
                         <div style={containerStyle} ref={container}>
                             {children}
                             {isTooltipVisible && (
-                                <TooltipWrapper position={tooltipPosition} anchor={tooltipAnchor}>
+                                <TooltipWrapper
+                                    position={tooltipPosition}
+                                    anchor={tooltipAnchor}
+                                    container={container}
+                                >
                                     {tooltipContent}
                                 </TooltipWrapper>
                             )}

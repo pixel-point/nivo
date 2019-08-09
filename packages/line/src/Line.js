@@ -7,7 +7,8 @@
  * file that was distributed with this source code.
  */
 import React, { Fragment, useState, useMemo } from 'react'
-import { withContainer, useDimensions, useTheme, SvgWrapper, CartesianMarkers } from '@nivo/core'
+import { useDimensions, useTheme, SvgWrapper, CartesianMarkers } from '@nivo/core'
+import { withContainer } from '../../core/src'
 import { useInheritedColor } from '@nivo/colors'
 import { Axes, Grid } from '@nivo/axes'
 import { BoxLegendSvg } from '@nivo/legends'
